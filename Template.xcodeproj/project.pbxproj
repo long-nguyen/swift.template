@@ -61,14 +61,102 @@
 		68565C15229C2303000C481C /* Template */ = {
 			isa = PBXGroup;
 			children = (
+				68565C2D229C2732000C481C /* Common */,
+				68565C2C229C272D000C481C /* Models */,
+				68565C2A229C270A000C481C /* View */,
+				68565C28229C26BD000C481C /* Supporting Files */,
 				68565C16229C2303000C481C /* AppDelegate.swift */,
-				68565C18229C2303000C481C /* ViewController.swift */,
-				68565C1A229C2303000C481C /* Main.storyboard */,
 				68565C1D229C2306000C481C /* Assets.xcassets */,
-				68565C1F229C2306000C481C /* LaunchScreen.storyboard */,
-				68565C22229C2306000C481C /* Info.plist */,
 			);
 			path = Template;
+			sourceTree = "<group>";
+		};
+		68565C28229C26BD000C481C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68565C22229C2306000C481C /* Info.plist */,
+				68565C29229C26E0000C481C /* Storyboards */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		68565C29229C26E0000C481C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				68565C1A229C2303000C481C /* Main.storyboard */,
+				68565C1F229C2306000C481C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		68565C2A229C270A000C481C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				68565C2E229C27A9000C481C /* Common */,
+				68565C2B229C2713000C481C /* Sample */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		68565C2B229C2713000C481C /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				68565C18229C2303000C481C /* ViewController.swift */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		68565C2C229C272D000C481C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		68565C2D229C2732000C481C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				68565C32229C2800000C481C /* Extension */,
+				68565C31229C27E8000C481C /* Utils */,
+				68565C30229C27E4000C481C /* Local */,
+				68565C2F229C27DE000C481C /* Remote */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		68565C2E229C27A9000C481C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		68565C2F229C27DE000C481C /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		68565C30229C27E4000C481C /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		68565C31229C27E8000C481C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		68565C32229C2800000C481C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		8185F6A72153C79F0D7223C3 /* Pods */ = {
