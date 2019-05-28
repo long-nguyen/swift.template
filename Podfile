@@ -8,6 +8,7 @@ target 'Template' do
   pod 'SwiftLint'
   pod 'SnapKit'
   pod 'Alamofire'
+  pod 'AlamofireImage'
   pod 'SQLite.swift'
 
 end
