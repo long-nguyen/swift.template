@@ -15,7 +15,7 @@ class SampleTableViewController: AbstractTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        items = DBHelper.instance.getAllItems()
+        items = DbMng.instance.getAllItems()
         self.tableView.reloadData()
     }
 

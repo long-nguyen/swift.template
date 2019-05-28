@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6821ADAC229D6E5500C9D115 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADAB229D6E5500C9D115 /* FMDatabase.m */; };
+		6821ADBB229D6E9400C9D115 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADB0229D6E9300C9D115 /* FMDatabasePool.m */; };
+		6821ADBC229D6E9400C9D115 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADB3229D6E9400C9D115 /* FMDatabaseQueue.m */; };
+		6821ADBD229D6E9400C9D115 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADB4229D6E9400C9D115 /* FMResultSet.m */; };
+		6821ADBE229D6E9400C9D115 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADB6229D6E9400C9D115 /* FMDatabaseAdditions.m */; };
 		68565C17229C2303000C481C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68565C16229C2303000C481C /* AppDelegate.swift */; };
 		68565C19229C2303000C481C /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68565C18229C2303000C481C /* SampleViewController.swift */; };
 		68565C1C229C2303000C481C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68565C1A229C2303000C481C /* Main.storyboard */; };
@@ -15,10 +20,10 @@
 		C590C5473CD9C47E87CF3C8A /* Pods_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD59A06FAF5BA2E69567589 /* Pods_Template.framework */; };
 		D26B5AD7229CD3D50063BD18 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AD6229CD3D50063BD18 /* AbstractViewController.swift */; };
 		D26B5AD9229CD4900063BD18 /* AbstractTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AD8229CD4900063BD18 /* AbstractTableViewController.swift */; };
-		D26B5ADE229CD5820063BD18 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5ADD229CD5820063BD18 /* StoreManager.swift */; };
+		D26B5ADE229CD5820063BD18 /* IAPMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5ADD229CD5820063BD18 /* IAPMng.swift */; };
 		D26B5AEA229CD6310063BD18 /* NetworkMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AE9229CD6310063BD18 /* NetworkMng.swift */; };
-		D26B5AEE229CD6640063BD18 /* LocalDataMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AED229CD6640063BD18 /* LocalDataMng.swift */; };
-		D26B5AF0229CD6810063BD18 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AEF229CD6810063BD18 /* DBHelper.swift */; };
+		D26B5AEE229CD6640063BD18 /* PrefMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AED229CD6640063BD18 /* PrefMng.swift */; };
+		D26B5AF0229CD6810063BD18 /* DBMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AEF229CD6810063BD18 /* DBMng.swift */; };
 		D26B5AF3229CD6C10063BD18 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AF2229CD6C10063BD18 /* UIColor+Ex.swift */; };
 		D26B5AF5229CD7020063BD18 /* PopupUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AF4229CD7020063BD18 /* PopupUtils.swift */; };
 		D26B5AF8229CD72C0063BD18 /* ProgressHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AF7229CD72C0063BD18 /* ProgressHud.swift */; };
@@ -34,6 +39,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6821ADA7229D6E0400C9D115 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6821ADA9229D6E5400C9D115 /* FMDB-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMDB-Bridging-Header.h"; sourceTree = "<group>"; };
+		6821ADAA229D6E5500C9D115 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		6821ADAB229D6E5500C9D115 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		6821ADAF229D6E9300C9D115 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		6821ADB0229D6E9300C9D115 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		6821ADB1229D6E9400C9D115 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		6821ADB3229D6E9400C9D115 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		6821ADB4229D6E9400C9D115 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		6821ADB5229D6E9400C9D115 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		6821ADB6229D6E9400C9D115 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		6821ADB7229D6E9400C9D115 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		6821ADB9229D6E9400C9D115 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		68565C13229C2303000C481C /* Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Template.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68565C16229C2303000C481C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68565C18229C2303000C481C /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
@@ -44,10 +62,10 @@
 		6CD59A06FAF5BA2E69567589 /* Pods_Template.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Template.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D26B5AD6229CD3D50063BD18 /* AbstractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		D26B5AD8229CD4900063BD18 /* AbstractTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractTableViewController.swift; sourceTree = "<group>"; };
-		D26B5ADD229CD5820063BD18 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		D26B5ADD229CD5820063BD18 /* IAPMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPMng.swift; sourceTree = "<group>"; };
 		D26B5AE9229CD6310063BD18 /* NetworkMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMng.swift; sourceTree = "<group>"; };
-		D26B5AED229CD6640063BD18 /* LocalDataMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataMng.swift; sourceTree = "<group>"; };
-		D26B5AEF229CD6810063BD18 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		D26B5AED229CD6640063BD18 /* PrefMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefMng.swift; sourceTree = "<group>"; };
+		D26B5AEF229CD6810063BD18 /* DBMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMng.swift; sourceTree = "<group>"; };
 		D26B5AF2229CD6C10063BD18 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		D26B5AF4229CD7020063BD18 /* PopupUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupUtils.swift; sourceTree = "<group>"; };
 		D26B5AF7229CD72C0063BD18 /* ProgressHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHud.swift; sourceTree = "<group>"; };
@@ -85,6 +103,25 @@
 				ECA600BAE326E4C295C2980F /* Pods-Template.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		6821ADAD229D6E5B00C9D115 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				6821ADAA229D6E5500C9D115 /* FMDatabase.h */,
+				6821ADAB229D6E5500C9D115 /* FMDatabase.m */,
+				6821ADB1229D6E9400C9D115 /* FMDatabaseAdditions.h */,
+				6821ADB6229D6E9400C9D115 /* FMDatabaseAdditions.m */,
+				6821ADB5229D6E9400C9D115 /* FMDatabasePool.h */,
+				6821ADB0229D6E9300C9D115 /* FMDatabasePool.m */,
+				6821ADB7229D6E9400C9D115 /* FMDatabaseQueue.h */,
+				6821ADB3229D6E9400C9D115 /* FMDatabaseQueue.m */,
+				6821ADAF229D6E9300C9D115 /* FMDB.h */,
+				6821ADB9229D6E9400C9D115 /* FMResultSet.h */,
+				6821ADB4229D6E9400C9D115 /* FMResultSet.m */,
+				6821ADA9229D6E5400C9D115 /* FMDB-Bridging-Header.h */,
+			);
+			path = FMDB;
 			sourceTree = "<group>";
 		};
 		68565C0A229C2303000C481C = {
@@ -182,6 +219,7 @@
 		D09E8CAC9AE471374A942F59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6821ADA7229D6E0400C9D115 /* SQLite.framework */,
 				6CD59A06FAF5BA2E69567589 /* Pods_Template.framework */,
 			);
 			name = Frameworks;
@@ -199,7 +237,7 @@
 		D26B5ADA229CD4CD0063BD18 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
-				D26B5ADD229CD5820063BD18 /* StoreManager.swift */,
+				D26B5ADD229CD5820063BD18 /* IAPMng.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -216,8 +254,9 @@
 		D26B5AE4229CD5EF0063BD18 /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				D26B5AED229CD6640063BD18 /* LocalDataMng.swift */,
-				D26B5AEF229CD6810063BD18 /* DBHelper.swift */,
+				6821ADAD229D6E5B00C9D115 /* FMDB */,
+				D26B5AED229CD6640063BD18 /* PrefMng.swift */,
+				D26B5AEF229CD6810063BD18 /* DBMng.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -290,6 +329,7 @@
 				TargetAttributes = {
 					68565C12229C2303000C481C = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -388,14 +428,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				68565C19229C2303000C481C /* SampleViewController.swift in Sources */,
+				6821ADAC229D6E5500C9D115 /* FMDatabase.m in Sources */,
 				D26B5AFE229CDA5F0063BD18 /* SampleDetailViewController.swift in Sources */,
 				D26B5AD9229CD4900063BD18 /* AbstractTableViewController.swift in Sources */,
 				D26B5AF3229CD6C10063BD18 /* UIColor+Ex.swift in Sources */,
 				D26B5AEA229CD6310063BD18 /* NetworkMng.swift in Sources */,
-				D26B5ADE229CD5820063BD18 /* StoreManager.swift in Sources */,
+				D26B5ADE229CD5820063BD18 /* IAPMng.swift in Sources */,
 				D26B5AFC229CD9E50063BD18 /* SampleTableViewController.swift in Sources */,
-				D26B5AF0229CD6810063BD18 /* DBHelper.swift in Sources */,
-				D26B5AEE229CD6640063BD18 /* LocalDataMng.swift in Sources */,
+				6821ADBD229D6E9400C9D115 /* FMResultSet.m in Sources */,
+				D26B5AF0229CD6810063BD18 /* DBMng.swift in Sources */,
+				6821ADBE229D6E9400C9D115 /* FMDatabaseAdditions.m in Sources */,
+				D26B5AEE229CD6640063BD18 /* PrefMng.swift in Sources */,
 				D26B5AD7229CD3D50063BD18 /* AbstractViewController.swift in Sources */,
 				D26B5B03229CE39C0063BD18 /* String+Ex.swift in Sources */,
 				D26B5B0B229CE8160063BD18 /* Utils.swift in Sources */,
@@ -403,6 +446,8 @@
 				D26B5AF8229CD72C0063BD18 /* ProgressHud.swift in Sources */,
 				D26B5AF5229CD7020063BD18 /* PopupUtils.swift in Sources */,
 				D26B5B07229CE4E50063BD18 /* UIApplication+Ex.swift in Sources */,
+				6821ADBC229D6E9400C9D115 /* FMDatabaseQueue.m in Sources */,
+				6821ADBB229D6E9400C9D115 /* FMDatabasePool.m in Sources */,
 				D26B5AFA229CD87B0063BD18 /* Const.swift in Sources */,
 				D26B5B01229CDBE40063BD18 /* SampleModel.swift in Sources */,
 			);
@@ -563,6 +608,7 @@
 			baseConfigurationReference = D7CEA4A25C438FC18D87474C /* Pods-Template.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U7J257E57V;
 				INFOPLIST_FILE = "$(SRCROOT)/Template/Supporting Files/Info.plist";
@@ -572,6 +618,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.au.Template;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Template/Common/Local/FMDB/FMDB-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -582,6 +630,7 @@
 			baseConfigurationReference = ECA600BAE326E4C295C2980F /* Pods-Template.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U7J257E57V;
 				INFOPLIST_FILE = "$(SRCROOT)/Template/Supporting Files/Info.plist";
@@ -591,6 +640,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.au.Template;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Template/Common/Local/FMDB/FMDB-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

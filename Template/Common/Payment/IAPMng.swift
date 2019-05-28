@@ -8,9 +8,9 @@
 
 import Foundation
 
-class StoreManager {
+class IAPMng {
     
-    static let instance = StoreManager()
+    static let instance = IAPMng()
     private init() {
         
     }
