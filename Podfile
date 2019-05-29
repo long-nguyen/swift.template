@@ -11,4 +11,5 @@ target 'Template' do
   pod 'AlamofireImage'
   pod 'SwiftyStoreKit'
   pod "PKHUD"
+  pod 'GRDB.swift'
 end

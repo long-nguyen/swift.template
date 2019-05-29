@@ -2,6 +2,9 @@ PODS:
   - Alamofire (4.8.2)
   - AlamofireImage (3.5.2):
     - Alamofire (~> 4.8)
+  - GRDB.swift (4.0.1):
+    - GRDB.swift/standard (= 4.0.1)
+  - GRDB.swift/standard (4.0.1)
   - PKHUD (5.2.1)
   - SnapKit (5.0.0)
   - SwiftLint (0.31.0)
@@ -11,6 +14,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - GRDB.swift
   - PKHUD
   - SnapKit
   - SwiftLint
@@ -21,6 +25,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
+    - GRDB.swift
     - PKHUD
     - SnapKit
     - SwiftLint
@@ -30,12 +35,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  GRDB.swift: 106a830decf1d92a3fc63c6d6a2f6586f6187297
   PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
 
-PODFILE CHECKSUM: f7333c7db58ba2013dd468951c75ad148612825e
+PODFILE CHECKSUM: aaf108d6a53516c83de69fecec3c4ccc9864fbd4
 
 COCOAPODS: 1.5.3

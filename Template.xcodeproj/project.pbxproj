@@ -17,6 +17,7 @@
 		68565C1C229C2303000C481C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68565C1A229C2303000C481C /* Main.storyboard */; };
 		68565C1E229C2306000C481C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68565C1D229C2306000C481C /* Assets.xcassets */; };
 		68565C21229C2306000C481C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68565C1F229C2306000C481C /* LaunchScreen.storyboard */; };
+		68FCFD59229EBC8500284353 /* DatabaseMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FCFD58229EBC8500284353 /* DatabaseMng.swift */; };
 		C590C5473CD9C47E87CF3C8A /* Pods_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD59A06FAF5BA2E69567589 /* Pods_Template.framework */; };
 		D26B5AD7229CD3D50063BD18 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AD6229CD3D50063BD18 /* AbstractViewController.swift */; };
 		D26B5AD9229CD4900063BD18 /* AbstractTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AD8229CD4900063BD18 /* AbstractTableViewController.swift */; };
@@ -58,6 +59,7 @@
 		68565C1D229C2306000C481C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68565C20229C2306000C481C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68565C22229C2306000C481C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68FCFD58229EBC8500284353 /* DatabaseMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMng.swift; sourceTree = "<group>"; };
 		6CD59A06FAF5BA2E69567589 /* Pods_Template.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Template.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D26B5AD6229CD3D50063BD18 /* AbstractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		D26B5AD8229CD4900063BD18 /* AbstractTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractTableViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				6821ADAD229D6E5B00C9D115 /* FMDB */,
 				D26B5AED229CD6640063BD18 /* PreferenceMng.swift */,
 				D26B5AEF229CD6810063BD18 /* DBMng.swift */,
+				68FCFD58229EBC8500284353 /* DatabaseMng.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Template/Pods-Template-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -400,6 +404,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -420,6 +425,7 @@
 				D2ABDB5D229E5FDF00E71A17 /* APIBase.swift in Sources */,
 				68565C19229C2303000C481C /* SampleViewController.swift in Sources */,
 				6821ADAC229D6E5500C9D115 /* FMDatabase.m in Sources */,
+				68FCFD59229EBC8500284353 /* DatabaseMng.swift in Sources */,
 				D26B5AFE229CDA5F0063BD18 /* SampleDetailViewController.swift in Sources */,
 				D26B5AD9229CD4900063BD18 /* AbstractTableViewController.swift in Sources */,
 				D26B5AF3229CD6C10063BD18 /* UIColor+Ex.swift in Sources */,
