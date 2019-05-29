@@ -9,6 +9,7 @@
 import Foundation
 
 //TODO: Check it
+//Convert to https://github.com/groue/GRDB.swift#database-queues
 class DbMng {
     
     static let instance = DbMng()

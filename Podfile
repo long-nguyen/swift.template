@@ -9,6 +9,6 @@ target 'Template' do
   pod 'SnapKit'
   pod 'Alamofire'
   pod 'AlamofireImage'
-  pod 'SQLite.swift'
-
+  pod 'SwiftyStoreKit'
+  pod "PKHUD"
 end

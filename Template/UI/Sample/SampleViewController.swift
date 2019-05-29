@@ -14,12 +14,12 @@ class SampleViewController: AbstractViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        testBt.setTitle("test_Bt".localize, for: UIControl.State.normal)
+        testBt.setTitle(LSTR("test_Bt"), for: UIControl.State.normal)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "tableSegue" {
-            Utils.LOG("Go here %@ %d", "abc", 1)
+            LOG("Go here %@ %d", "abc", 1)
         }
     }
 }

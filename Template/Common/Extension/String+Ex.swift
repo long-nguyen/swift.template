@@ -7,9 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
-    var localize: String {
-        return NSLocalizedString(self, comment: "")
+    var isValidEmail: Bool {
+        let emailRegex = "[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}"
+        let emailCheck = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        return emailCheck.evaluate(with: self)
+    }
+
+    var encodeUrlPercentEncoding: String {
+        return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? self
     }
 }

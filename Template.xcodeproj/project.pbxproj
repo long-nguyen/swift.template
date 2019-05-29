@@ -21,21 +21,20 @@
 		D26B5AD7229CD3D50063BD18 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AD6229CD3D50063BD18 /* AbstractViewController.swift */; };
 		D26B5AD9229CD4900063BD18 /* AbstractTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AD8229CD4900063BD18 /* AbstractTableViewController.swift */; };
 		D26B5ADE229CD5820063BD18 /* IAPMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5ADD229CD5820063BD18 /* IAPMng.swift */; };
-		D26B5AEA229CD6310063BD18 /* NetworkMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AE9229CD6310063BD18 /* NetworkMng.swift */; };
-		D26B5AEE229CD6640063BD18 /* PrefMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AED229CD6640063BD18 /* PrefMng.swift */; };
+		D26B5AEA229CD6310063BD18 /* APIMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AE9229CD6310063BD18 /* APIMng.swift */; };
+		D26B5AEE229CD6640063BD18 /* PreferenceMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AED229CD6640063BD18 /* PreferenceMng.swift */; };
 		D26B5AF0229CD6810063BD18 /* DBMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AEF229CD6810063BD18 /* DBMng.swift */; };
 		D26B5AF3229CD6C10063BD18 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AF2229CD6C10063BD18 /* UIColor+Ex.swift */; };
 		D26B5AF5229CD7020063BD18 /* PopupUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AF4229CD7020063BD18 /* PopupUtils.swift */; };
-		D26B5AF8229CD72C0063BD18 /* ProgressHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AF7229CD72C0063BD18 /* ProgressHud.swift */; };
 		D26B5AFA229CD87B0063BD18 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AF9229CD87B0063BD18 /* Const.swift */; };
 		D26B5AFC229CD9E50063BD18 /* SampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AFB229CD9E50063BD18 /* SampleTableViewController.swift */; };
 		D26B5AFE229CDA5F0063BD18 /* SampleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AFD229CDA5F0063BD18 /* SampleDetailViewController.swift */; };
 		D26B5B01229CDBE40063BD18 /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5B00229CDBE40063BD18 /* SampleModel.swift */; };
 		D26B5B03229CE39C0063BD18 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5B02229CE39C0063BD18 /* String+Ex.swift */; };
 		D26B5B07229CE4E50063BD18 /* UIApplication+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5B06229CE4E50063BD18 /* UIApplication+Ex.swift */; };
-		D26B5B09229CE7700063BD18 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D26B5B08229CE7700063BD18 /* Default-568h@2x.png */; };
-		D26B5B0B229CE8160063BD18 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5B0A229CE8160063BD18 /* Utils.swift */; };
+		D26B5B0B229CE8160063BD18 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5B0A229CE8160063BD18 /* Macros.swift */; };
 		D26B5B0E229CE8720063BD18 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D26B5B10229CE8720063BD18 /* Localizable.strings */; };
+		D2ABDB5D229E5FDF00E71A17 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ABDB5C229E5FDF00E71A17 /* APIBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,23 +62,22 @@
 		D26B5AD6229CD3D50063BD18 /* AbstractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		D26B5AD8229CD4900063BD18 /* AbstractTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractTableViewController.swift; sourceTree = "<group>"; };
 		D26B5ADD229CD5820063BD18 /* IAPMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPMng.swift; sourceTree = "<group>"; };
-		D26B5AE9229CD6310063BD18 /* NetworkMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMng.swift; sourceTree = "<group>"; };
-		D26B5AED229CD6640063BD18 /* PrefMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefMng.swift; sourceTree = "<group>"; };
+		D26B5AE9229CD6310063BD18 /* APIMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMng.swift; sourceTree = "<group>"; };
+		D26B5AED229CD6640063BD18 /* PreferenceMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceMng.swift; sourceTree = "<group>"; };
 		D26B5AEF229CD6810063BD18 /* DBMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMng.swift; sourceTree = "<group>"; };
 		D26B5AF2229CD6C10063BD18 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		D26B5AF4229CD7020063BD18 /* PopupUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupUtils.swift; sourceTree = "<group>"; };
-		D26B5AF7229CD72C0063BD18 /* ProgressHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHud.swift; sourceTree = "<group>"; };
 		D26B5AF9229CD87B0063BD18 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		D26B5AFB229CD9E50063BD18 /* SampleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewController.swift; sourceTree = "<group>"; };
 		D26B5AFD229CDA5F0063BD18 /* SampleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDetailViewController.swift; sourceTree = "<group>"; };
 		D26B5B00229CDBE40063BD18 /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
 		D26B5B02229CE39C0063BD18 /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		D26B5B06229CE4E50063BD18 /* UIApplication+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Ex.swift"; sourceTree = "<group>"; };
-		D26B5B08229CE7700063BD18 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		D26B5B0A229CE8160063BD18 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		D26B5B0A229CE8160063BD18 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		D26B5B0F229CE8720063BD18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D26B5B11229CE8B30063BD18 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		D26B5B12229CE8B30063BD18 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D2ABDB5C229E5FDF00E71A17 /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
 		D7CEA4A25C438FC18D87474C /* Pods-Template.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Template.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Template/Pods-Template.debug.xcconfig"; sourceTree = "<group>"; };
 		ECA600BAE326E4C295C2980F /* Pods-Template.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Template.release.xcconfig"; path = "Pods/Target Support Files/Pods-Template/Pods-Template.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,7 +125,6 @@
 		68565C0A229C2303000C481C = {
 			isa = PBXGroup;
 			children = (
-				D26B5B08229CE7700063BD18 /* Default-568h@2x.png */,
 				68565C15229C2303000C481C /* Template */,
 				68565C14229C2303000C481C /* Products */,
 				1BC1DA06DC945548868FB414 /* Pods */,
@@ -210,7 +207,6 @@
 		68565C2E229C27A9000C481C /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				D26B5AF6229CD71C0063BD18 /* Hud */,
 				D26B5AD5229CD3C70063BD18 /* Abstract */,
 			);
 			path = Common;
@@ -245,7 +241,7 @@
 		D26B5AE1229CD5DE0063BD18 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				D26B5B0A229CE8160063BD18 /* Utils.swift */,
+				D26B5B0A229CE8160063BD18 /* Macros.swift */,
 				D26B5AF4229CD7020063BD18 /* PopupUtils.swift */,
 			);
 			path = Utils;
@@ -255,7 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				6821ADAD229D6E5B00C9D115 /* FMDB */,
-				D26B5AED229CD6640063BD18 /* PrefMng.swift */,
+				D26B5AED229CD6640063BD18 /* PreferenceMng.swift */,
 				D26B5AEF229CD6810063BD18 /* DBMng.swift */,
 			);
 			path = Local;
@@ -264,7 +260,8 @@
 		D26B5AE8229CD61D0063BD18 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
-				D26B5AE9229CD6310063BD18 /* NetworkMng.swift */,
+				D26B5AE9229CD6310063BD18 /* APIMng.swift */,
+				D2ABDB5C229E5FDF00E71A17 /* APIBase.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -277,14 +274,6 @@
 				D26B5B06229CE4E50063BD18 /* UIApplication+Ex.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		D26B5AF6229CD71C0063BD18 /* Hud */ = {
-			isa = PBXGroup;
-			children = (
-				D26B5AF7229CD72C0063BD18 /* ProgressHud.swift */,
-			);
-			path = Hud;
 			sourceTree = "<group>";
 		};
 		D26B5AFF229CDBCF0063BD18 /* Models */ = {
@@ -359,7 +348,6 @@
 			files = (
 				D26B5B0E229CE8720063BD18 /* Localizable.strings in Resources */,
 				68565C21229C2306000C481C /* LaunchScreen.storyboard in Resources */,
-				D26B5B09229CE7700063BD18 /* Default-568h@2x.png in Resources */,
 				68565C1E229C2306000C481C /* Assets.xcassets in Resources */,
 				68565C1C229C2303000C481C /* Main.storyboard in Resources */,
 			);
@@ -401,9 +389,10 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Template/Pods-Template-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -411,9 +400,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -427,23 +417,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2ABDB5D229E5FDF00E71A17 /* APIBase.swift in Sources */,
 				68565C19229C2303000C481C /* SampleViewController.swift in Sources */,
 				6821ADAC229D6E5500C9D115 /* FMDatabase.m in Sources */,
 				D26B5AFE229CDA5F0063BD18 /* SampleDetailViewController.swift in Sources */,
 				D26B5AD9229CD4900063BD18 /* AbstractTableViewController.swift in Sources */,
 				D26B5AF3229CD6C10063BD18 /* UIColor+Ex.swift in Sources */,
-				D26B5AEA229CD6310063BD18 /* NetworkMng.swift in Sources */,
+				D26B5AEA229CD6310063BD18 /* APIMng.swift in Sources */,
 				D26B5ADE229CD5820063BD18 /* IAPMng.swift in Sources */,
 				D26B5AFC229CD9E50063BD18 /* SampleTableViewController.swift in Sources */,
 				6821ADBD229D6E9400C9D115 /* FMResultSet.m in Sources */,
 				D26B5AF0229CD6810063BD18 /* DBMng.swift in Sources */,
 				6821ADBE229D6E9400C9D115 /* FMDatabaseAdditions.m in Sources */,
-				D26B5AEE229CD6640063BD18 /* PrefMng.swift in Sources */,
+				D26B5AEE229CD6640063BD18 /* PreferenceMng.swift in Sources */,
 				D26B5AD7229CD3D50063BD18 /* AbstractViewController.swift in Sources */,
 				D26B5B03229CE39C0063BD18 /* String+Ex.swift in Sources */,
-				D26B5B0B229CE8160063BD18 /* Utils.swift in Sources */,
+				D26B5B0B229CE8160063BD18 /* Macros.swift in Sources */,
 				68565C17229C2303000C481C /* AppDelegate.swift in Sources */,
-				D26B5AF8229CD72C0063BD18 /* ProgressHud.swift in Sources */,
 				D26B5AF5229CD7020063BD18 /* PopupUtils.swift in Sources */,
 				D26B5B07229CE4E50063BD18 /* UIApplication+Ex.swift in Sources */,
 				6821ADBC229D6E9400C9D115 /* FMDatabaseQueue.m in Sources */,
