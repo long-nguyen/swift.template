@@ -4,12 +4,8 @@
 target 'Template' do
   use_frameworks!
 
-  pod 'SwiftyJSON'
   pod 'SwiftLint'
-  pod 'SnapKit'
   pod 'Alamofire'
-  pod 'AlamofireImage'
-  pod 'SwiftyStoreKit'
-  pod "PKHUD"
+  pod 'SDWebImage'
   pod 'GRDB.swift'
 end

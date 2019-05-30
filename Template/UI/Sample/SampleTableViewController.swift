@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AlamofireImage
+import SDWebImage
 
 class SampleTableViewController: AbstractTableViewController {
     
@@ -15,13 +15,17 @@ class SampleTableViewController: AbstractTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        items = DbMng.instance.getAllItems()
+        items = DatabaseMng.instance.getAllItems()
         self.tableView.reloadData()
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = items[indexPath.row]
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "SampleDetailViewController") as! SampleDetailViewController
+        controller.name = data.name
+        controller.imageUrl = data.imageUrl
+        self.navigationController?.pushViewController(controller, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -30,7 +34,7 @@ class SampleTableViewController: AbstractTableViewController {
         let data = items[indexPath.row]
         cell.textLabel?.text = data.name
         if let url = URL(string: data.imageUrl ?? "") {
-            cell.imageView?.af_setImage(withURL: url)
+            cell.imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder.png"))
         }
         return cell
     }

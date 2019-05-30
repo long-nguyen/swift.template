@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 class APIMng: APIBase {
     static let instance = APIMng()
-    
+
     func getSystemInfo(completion: APICompletionHandler?) {
-        self.executeRequest(.get, APIPath.config, nil, nil) { (json, error) in
-            //TODO: test
+        self.executeRequest(.get, APIPath.config, nil, nil) { (data, error) in
+            LOG(data)
         }
     }
 }

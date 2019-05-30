@@ -92,98 +92,81 @@ extension IAPMng: SKPaymentTransactionObserver {
         for transaction in transactions {
             switch transaction.transactionState {
             case .failed:
-                self.onFailedTransaction(transaction)
+                self.failedTransaction(transaction)
             case .purchased, .restored:
-                self.onCompleteTransaction(transaction)
+                self.processTransaction(transaction)
             case .deferred, .purchasing:
                 LOG("Transaction in progress: \(transaction)")
             default:
                 break
             }
-            
         }
     }
     
-    func checkTransaction(_ transaction: SKPaymentTransaction) {
-        
-        
-        let receiptFileURL = Bundle.main.appStoreReceiptURL
-        let receiptData = try? Data(contentsOf: receiptFileURL!)
-        let receiptString = receiptData?.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
-        let jsonDict: [String: AnyObject] = ["receipt-data" : receiptString! as AnyObject, "password" : "ee70188badc24b1fa8c78f1ddb4cbb3a" as AnyObject]
-        
-        self.validateReceipt(receiptJson: jsonDict) { result in
-            //TODO
+    func failedTransaction(_ transaction: SKPaymentTransaction) {
+        if transaction.error?.code == SKError.paymentCancelled.rawValue {
+            self._purchaseCompletion?(false, nil, LSTR("err_payment_cancelled"))
+        } else {
+            self._purchaseCompletion?(false, nil, transaction.error?.localizedDescription)
         }
-
+        SKPaymentQueue.default().finishTransaction(transaction)
     }
     
-    func validateReceipt(receiptJson: [String: AnyObject], completion: @escaping (Bool) -> Void) {
-        #if DEBUG
-        let verifyURL = "https://sandbox.itunes.apple.com/verifyReceipt"
-        #else
-        let verifyURL = "https://buy.itunes.apple.com/verifyReceipt"
-        #endif
+    func processTransaction(_ transaction: SKPaymentTransaction) {
+        self.validateReceipt() { result, data, errMessage in
+            if result {
+                //Do some action, like getting purchase date, time, expire date..
+                self._purchaseCompletion?(true, data, errMessage)
+                SKPaymentQueue.default().finishTransaction(transaction)
+            } else {
+                self._purchaseCompletion?(false, nil, LSTR("error_validate_purchase"))
+            }
+        }
+    }
+    
+    func validateReceipt(completion: @escaping (Bool, Any?, String?) -> Void) {
+        guard let receiptFileURL = Bundle.main.appStoreReceiptURL else {
+            completion(false, nil, LSTR("error_system"))
+            return
+        }
         do {
-            let requestData = try JSONSerialization.data(withJSONObject: receiptJson, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let receiptData = try Data(contentsOf: receiptFileURL)
+            let receiptString = receiptData.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+            let requestContent = ["receipt-data" : receiptString]
+            let requestData = try JSONSerialization.data(withJSONObject: requestContent, options: JSONSerialization.WritingOptions.prettyPrinted)
+            
+            #if DEBUG
+            let verifyURL = "https://sandbox.itunes.apple.com/verifyReceipt"
+            #else
+            let verifyURL = "https://buy.itunes.apple.com/verifyReceipt"
+            #endif
+
             let storeURL = URL(string: verifyURL)!
             var storeRequest = URLRequest(url: storeURL)
             storeRequest.httpMethod = "POST"
             storeRequest.httpBody = requestData
-            
             let session = URLSession(configuration: URLSessionConfiguration.default)
-            let task = session.dataTask(with: storeRequest, completionHandler: { [weak self] (data, response, error) in
-                do {
-                    let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
-                    print("=======>",jsonResponse)
-                    if let date = self?.getExpirationDateFromResponse(jsonResponse as! NSDictionary) {
-                        print(date)
+            let task = session.dataTask(with: storeRequest, completionHandler: { data, response, error in
+                if let err = error {
+                    completion(false, nil, err.localizedDescription)
+                } else {
+                    do {
+                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
+                        let status = jsonResponse["status"] as! Int
+                        if (status == 0) {
+                            completion(true, nil, nil)
+                        } else {
+                            completion(false, nil, nil)
+                        }
+                    } catch let parseError {
+                        completion(false, nil, parseError.localizedDescription)
                     }
-                } catch let parseError {
-                    print(parseError)
                 }
             })
             task.resume()
         } catch let parseError {
-            print(parseError)
+            LOG(parseError)
+            completion(false, nil, parseError.localizedDescription)
         }
     }
-    
-    //Used for subscription
-    func getExpirationDateFromResponse(_ jsonResponse: NSDictionary) -> Date? {
-        if let receiptInfo: NSArray = jsonResponse["latest_receipt_info"] as? NSArray {
-            let lastReceipt = receiptInfo.lastObject as! NSDictionary
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss VV"
-            if let expiresDate = lastReceipt["expires_date"] as? String {
-                return formatter.date(from: expiresDate)
-            }
-            
-            return nil
-        }
-        else {
-            return nil
-        }
-    }
-    
-    func onCompleteTransaction(_ transaction: SKPaymentTransaction) {
-        SKPaymentQueue.default().finishTransaction(transaction)
-        self.checkTransaction(transaction)
-    }
-    
-    func onFailedTransaction(_ transaction: SKPaymentTransaction) {
-        if transaction.error?.code == SKError.paymentCancelled.rawValue {
-            _purchaseCompletion?(false, nil, LSTR("err_payment_cancelled"))
-        } else {
-            _purchaseCompletion?(false, nil, transaction.error?.localizedDescription)
-        }
-
-        SKPaymentQueue.default().finishTransaction(transaction)
-    }
-    
-    func onRestoreTransaction(_ transaction: SKPaymentTransaction) {
-        SKPaymentQueue.default().finishTransaction(transaction)
-        self.checkTransaction(transaction)
-    }
-    
 }

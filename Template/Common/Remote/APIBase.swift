@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 import Alamofire
 
 let kMessage = "message"
@@ -40,7 +39,7 @@ struct APIPath {
     static let other  = "other"
 }
 
-typealias APICompletionHandler = (JSON?, NSError?) -> Void
+typealias APICompletionHandler = ([String: Any]?, NSError?) -> Void
 
 class APIBase {
     private let validateStatusCode: Int = 300
@@ -55,7 +54,7 @@ class APIBase {
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let resultData) :
-                    self.processresponse(data: resultData, completion: completion)
+                    self.processResponse(data: resultData, completion: completion)
                 case .failure(let error):
                     self.processNetworkError(error: error, completion: completion)
                 }
@@ -65,14 +64,14 @@ class APIBase {
         #endif
     }
     
-    private func processresponse(data: Any, completion: APICompletionHandler?) {
-        if let handler = completion, let dictionary = data as? [String:Any] {
-            if let dataObj = dictionary[kData] {
-                handler(JSON(dataObj), nil)
-            } else if let errObj = dictionary[kError]{
-                self.processErrorResponse(error: errObj as! [String:Any], completion: handler)
+    private func processResponse(data: Any, completion: APICompletionHandler?) {
+        if let dictionary = data as? [String:Any] {
+            if let dataObj = dictionary[kData] as? [String: Any]{
+                completion?(dataObj, nil)
+            } else if let errObj = dictionary[kError] as? [String: Any]{
+                self.processErrorResponse(error: errObj, completion: completion)
             } else {
-                handler(nil, defaultUnknownError)
+                completion?(nil, defaultUnknownError)
             }
         }
     }
