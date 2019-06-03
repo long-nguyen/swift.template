@@ -7,12 +7,14 @@ PODS:
     - SDWebImage/Core (= 5.0.3)
   - SDWebImage/Core (5.0.3)
   - SwiftLint (0.31.0)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - GRDB.swift
   - SDWebImage
   - SwiftLint
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -20,13 +22,15 @@ SPEC REPOS:
     - GRDB.swift
     - SDWebImage
     - SwiftLint
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   GRDB.swift: 106a830decf1d92a3fc63c6d6a2f6586f6187297
   SDWebImage: d4f87d7d36c8a4d9f9459dc282e0caa057fdf935
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: ec790ea84ccf6d1b14741c8fa53f6ba44df61e80
+PODFILE CHECKSUM: 6a6ea2d7684e1bf9571ee08151cceb10795be7f0
 
 COCOAPODS: 1.5.3

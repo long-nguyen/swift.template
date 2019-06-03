@@ -8,4 +8,5 @@ target 'Template' do
   pod 'Alamofire'
   pod 'SDWebImage'
   pod 'GRDB.swift'
+  pod 'SwiftyJSON'
 end

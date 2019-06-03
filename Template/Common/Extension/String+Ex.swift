@@ -19,4 +19,8 @@ extension String {
     var encodeUrlPercentEncoding: String {
         return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? self
     }
+    
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
 }

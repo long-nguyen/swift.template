@@ -25,10 +25,5 @@ func LOG(_ items: Any..., separator: String = " ", terminator: String = "\n") {
     #endif
 }
 
-//Localize string
-func LSTR(_ keyIntable: String, inTable table: String? = nil) -> String {
-    return NSLocalizedString(keyIntable, tableName: table, comment: "")
-}
-
 var SCREEN_RECT = UIScreen.main.bounds
 

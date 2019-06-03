@@ -14,14 +14,15 @@
 		68565C21229C2306000C481C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68565C1F229C2306000C481C /* LaunchScreen.storyboard */; };
 		68FCFD59229EBC8500284353 /* DatabaseMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FCFD58229EBC8500284353 /* DatabaseMng.swift */; };
 		C590C5473CD9C47E87CF3C8A /* Pods_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD59A06FAF5BA2E69567589 /* Pods_Template.framework */; };
+		D21C848022A4C4AC00B752B6 /* NotiConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C847F22A4C4AC00B752B6 /* NotiConst.swift */; };
 		D26B5AD7229CD3D50063BD18 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AD6229CD3D50063BD18 /* AbstractViewController.swift */; };
 		D26B5AD9229CD4900063BD18 /* AbstractTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AD8229CD4900063BD18 /* AbstractTableViewController.swift */; };
 		D26B5ADE229CD5820063BD18 /* IAPMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5ADD229CD5820063BD18 /* IAPMng.swift */; };
 		D26B5AEA229CD6310063BD18 /* APIMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AE9229CD6310063BD18 /* APIMng.swift */; };
 		D26B5AEE229CD6640063BD18 /* PreferenceMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AED229CD6640063BD18 /* PreferenceMng.swift */; };
 		D26B5AF3229CD6C10063BD18 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AF2229CD6C10063BD18 /* UIColor+Ex.swift */; };
-		D26B5AF5229CD7020063BD18 /* PopupUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AF4229CD7020063BD18 /* PopupUtils.swift */; };
-		D26B5AFA229CD87B0063BD18 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AF9229CD87B0063BD18 /* Const.swift */; };
+		D26B5AF5229CD7020063BD18 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AF4229CD7020063BD18 /* Alerts.swift */; };
+		D26B5AFA229CD87B0063BD18 /* CommonConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AF9229CD87B0063BD18 /* CommonConst.swift */; };
 		D26B5AFC229CD9E50063BD18 /* SampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AFB229CD9E50063BD18 /* SampleTableViewController.swift */; };
 		D26B5AFE229CDA5F0063BD18 /* SampleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5AFD229CDA5F0063BD18 /* SampleDetailViewController.swift */; };
 		D26B5B01229CDBE40063BD18 /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B5B00229CDBE40063BD18 /* SampleModel.swift */; };
@@ -43,14 +44,15 @@
 		68565C22229C2306000C481C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68FCFD58229EBC8500284353 /* DatabaseMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMng.swift; sourceTree = "<group>"; };
 		6CD59A06FAF5BA2E69567589 /* Pods_Template.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Template.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D21C847F22A4C4AC00B752B6 /* NotiConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiConst.swift; sourceTree = "<group>"; };
 		D26B5AD6229CD3D50063BD18 /* AbstractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		D26B5AD8229CD4900063BD18 /* AbstractTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractTableViewController.swift; sourceTree = "<group>"; };
 		D26B5ADD229CD5820063BD18 /* IAPMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPMng.swift; sourceTree = "<group>"; };
 		D26B5AE9229CD6310063BD18 /* APIMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMng.swift; sourceTree = "<group>"; };
 		D26B5AED229CD6640063BD18 /* PreferenceMng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceMng.swift; sourceTree = "<group>"; };
 		D26B5AF2229CD6C10063BD18 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
-		D26B5AF4229CD7020063BD18 /* PopupUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupUtils.swift; sourceTree = "<group>"; };
-		D26B5AF9229CD87B0063BD18 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		D26B5AF4229CD7020063BD18 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		D26B5AF9229CD87B0063BD18 /* CommonConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonConst.swift; sourceTree = "<group>"; };
 		D26B5AFB229CD9E50063BD18 /* SampleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewController.swift; sourceTree = "<group>"; };
 		D26B5AFD229CDA5F0063BD18 /* SampleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDetailViewController.swift; sourceTree = "<group>"; };
 		D26B5B00229CDBE40063BD18 /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
@@ -158,12 +160,12 @@
 		68565C2D229C2732000C481C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D21C847E22A4C47000B752B6 /* Consts */,
 				D26B5AF1229CD6AE0063BD18 /* Extension */,
 				D26B5AE8229CD61D0063BD18 /* Remote */,
 				D26B5AE4229CD5EF0063BD18 /* Local */,
 				D26B5AE1229CD5DE0063BD18 /* Utils */,
 				D26B5ADA229CD4CD0063BD18 /* Payment */,
-				D26B5AF9229CD87B0063BD18 /* Const.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -183,6 +185,15 @@
 				6CD59A06FAF5BA2E69567589 /* Pods_Template.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D21C847E22A4C47000B752B6 /* Consts */ = {
+			isa = PBXGroup;
+			children = (
+				D26B5AF9229CD87B0063BD18 /* CommonConst.swift */,
+				D21C847F22A4C4AC00B752B6 /* NotiConst.swift */,
+			);
+			path = Consts;
 			sourceTree = "<group>";
 		};
 		D26B5AD5229CD3C70063BD18 /* Abstract */ = {
@@ -206,7 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				D26B5B0A229CE8160063BD18 /* Macros.swift */,
-				D26B5AF4229CD7020063BD18 /* PopupUtils.swift */,
+				D26B5AF4229CD7020063BD18 /* Alerts.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -353,6 +364,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -361,6 +373,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -388,10 +401,11 @@
 				D26B5B03229CE39C0063BD18 /* String+Ex.swift in Sources */,
 				D26B5B0B229CE8160063BD18 /* Macros.swift in Sources */,
 				68565C17229C2303000C481C /* AppDelegate.swift in Sources */,
-				D26B5AF5229CD7020063BD18 /* PopupUtils.swift in Sources */,
+				D26B5AF5229CD7020063BD18 /* Alerts.swift in Sources */,
 				D26B5B07229CE4E50063BD18 /* UIApplication+Ex.swift in Sources */,
-				D26B5AFA229CD87B0063BD18 /* Const.swift in Sources */,
+				D26B5AFA229CD87B0063BD18 /* CommonConst.swift in Sources */,
 				D26B5B01229CDBE40063BD18 /* SampleModel.swift in Sources */,
+				D21C848022A4C4AC00B752B6 /* NotiConst.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

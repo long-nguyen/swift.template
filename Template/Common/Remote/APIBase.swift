@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 let kMessage = "message"
 let kError = "error"
@@ -15,17 +16,23 @@ let kCode = "code"
 let kData = "data"
 
 #if DEBUG
-let API_BASE_URL = "https://weatherapp.activeuser.co/v1/api/"
+let API_BASE_URL = "http://weather.local/api/"
 #else
 let API_BASE_URL = ""
 #endif
-
-struct ErrorMessage {
-    static let unknown = LSTR("err_unknown")
-    static let invalidParam = LSTR("err_invalid")
+struct APIPath {
+    static let config = "config"
+    static let other  = "other"
 }
 
-struct ErrorCode {
+fileprivate struct ErrorMessage {
+    static let unknown = "err_unknown".localized
+    static let invalidParam = "err_invalid".localized
+    static let network = "err_network".localized
+    static let notfound = "err_notfound".localized
+}
+
+fileprivate struct ErrorCode {
     static let unknown = 0
     static let invalidParam = 400
     static let unauthorize = 401
@@ -34,29 +41,40 @@ struct ErrorCode {
     static let serverError = 500
 }
 
-struct APIPath {
-    static let config = "config"
-    static let other  = "other"
+struct APIError {
+    var code: Int?
+    var message: String?
 }
 
-typealias APICompletionHandler = ([String: Any]?, NSError?) -> Void
+typealias APICompletionHandler = (JSON?, APIError?) -> Void
 
 class APIBase {
     private let validateStatusCode: Int = 300
-    private let defaultUnknownError = NSError(domain: NSURLErrorDomain, code: ErrorCode.unknown, userInfo: [kMessage:ErrorMessage.unknown])
+    private let defaultUnknownError = APIError(code: ErrorCode.unknown, message: ErrorMessage.unknown)
+    private let defaultNetworkError = APIError(code: ErrorCode.unknown, message: ErrorMessage.network)
 
     func executeRequest(_ method: HTTPMethod, _ path: String?, _ params: [String: Any]? = nil, _ headers: [String: String]? = nil, _ completion: APICompletionHandler? = nil) {
         
+        //Network
+        if NetworkReachabilityManager()?.networkReachabilityStatus == .notReachable {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotiConst.NO_NETWORK), object: nil)
+            completion?(nil, defaultNetworkError)
+            return
+        }
+        
+        //Header & Encoding
+        let preparedHeaders = self.mergeHeaders(headers)
         let encoding: ParameterEncoding = (method == .get ? URLEncoding.default : JSONEncoding.default)
         
-        let request = Alamofire.request(self.buildUrl(path), method: method, parameters: params, encoding: encoding, headers: headers)
+        //request
+        let request = Alamofire.request(self.buildUrl(path), method: method, parameters: params, encoding: encoding, headers: preparedHeaders)
             .validate()
-            .responseJSON { (response) in
+            .responseJSON {[weak self] (response) in
                 switch response.result {
                 case .success(let resultData) :
-                    self.processResponse(data: resultData, completion: completion)
-                case .failure(let error):
-                    self.processNetworkError(error: error, completion: completion)
+                    self?.processResponse(JSON(resultData), completion: completion)
+                case .failure:
+                    self?.processNetworkError(response, completion: completion)
                 }
         }
         #if DEBUG
@@ -64,43 +82,78 @@ class APIBase {
         #endif
     }
     
-    private func processResponse(data: Any, completion: APICompletionHandler?) {
-        if let dictionary = data as? [String:Any] {
-            if let dataObj = dictionary[kData] as? [String: Any]{
-                completion?(dataObj, nil)
-            } else if let errObj = dictionary[kError] as? [String: Any]{
-                self.processErrorResponse(error: errObj, completion: completion)
-            } else {
-                completion?(nil, defaultUnknownError)
-            }
+    
+    private func mergeHeaders(_ headers: [String:String]?) -> [String:String] {
+        var returnHeaders: [String: String] = ["Content-Type": "application/json", "Accept": "application/json"]
+         //Add token if needed
+        //headers["X-AuthToken"] = UserInfo.shared.accessToken
+        if let addHeaders = headers {
+            addHeaders.forEach({ (key, value) in
+                returnHeaders[key] = value
+            })
+        }
+        return returnHeaders
+    }
+    
+    /*
+     This function process succees response, with format
+     {
+     "data":{...}
+     }
+     or
+     {
+     "error":{..}
+     }
+     */
+    private func processResponse(_ data: JSON, completion: APICompletionHandler?) {
+        if data[kError].exists() {
+            self.processErrorResponse(data[kError], completion: completion)
+        } else if data[kData].exists() {
+            completion?(data[kData], nil)
+        } else {
+            completion?(nil, defaultUnknownError)
         }
     }
     
-    private func processErrorResponse(error: [String:Any], completion: APICompletionHandler?) {
-        var msg = error[kMessage] as? String
-        let errCode = error[kCode] as? Int
+    /*
+     This function is used to process server returned error code(status code = 200)
+     Return localized errorr message
+     */
+    private func processErrorResponse(_ error: JSON, completion: APICompletionHandler?) {
+        var msg = error[kMessage].string
+        let errCode = error[kCode].int
         switch errCode {
         case 999:
             msg = "A special error"
         default:
             break
         }
-        completion?(nil, NSError(domain: NSURLErrorDomain, code: errCode ?? ErrorCode.unknown, userInfo: [kMessage: msg ?? ErrorMessage.unknown]))
+        completion?(nil, APIError(code: errCode ?? ErrorCode.unknown,  message: msg ?? ErrorMessage.unknown))
     }
     
-    private func processNetworkError(error: Error, completion: APICompletionHandler?) {
-        guard let mError = error as NSError? else {
-            completion?(nil, defaultUnknownError)
+    /*
+     This function is used to process network error(status code != 200)
+     If the system can not return localized error message, this function will convert to localized message
+    */
+    private func processNetworkError(_ response: DataResponse<Any>, completion: APICompletionHandler?) {
+        var errorMessage = ErrorMessage.unknown
+        if let data = response.data {
+            if let responseJSON = try? JSON(data: data) {
+                errorMessage = responseJSON["error"]["message"].stringValue
+            }
         }
-        let code = mError.code
-        var message = mError.localizedDescription
+        
+        let code = response.response?.statusCode
+        
         switch code {
         case ErrorCode.invalidParam:
-            message = ErrorMessage.invalidParam
+            errorMessage = ErrorMessage.invalidParam
+        case ErrorCode.notfound:
+            errorMessage = ErrorMessage.network
         default:
-            message = ErrorMessage.unknown
+            break
         }
-        completion?(nil, NSError(domain: NSURLErrorDomain, code: code, userInfo: [kMessage: message]))
+        completion?(nil, APIError(code: code, message: errorMessage))
     }
     
     private func buildUrl(_ path:String?) ->String {
@@ -117,17 +170,4 @@ class APIBase {
         }
         return API_BASE_URL
     }
-}
-
-extension Error {
-    var nsError: NSError { return self as NSError }
-    
-    var domain: String { return nsError.domain }
-    var code: Int { return nsError.code }
-    var userInfo: [String: Any] { return nsError.userInfo }
-    
-    var isUnauthorizedError: Bool { return self.code == ErrorCode.unauthorize }
-    var isForbidden: Bool { return self.code == ErrorCode.forbidden }
-    var isNotFound: Bool { return  self.code == ErrorCode.notfound }
-    var isForbiddenOrNotFound: Bool { return self.isForbidden || self.isNotFound }
 }

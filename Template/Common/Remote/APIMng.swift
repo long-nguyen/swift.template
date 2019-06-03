@@ -12,8 +12,8 @@ class APIMng: APIBase {
     static let instance = APIMng()
 
     func getSystemInfo(completion: APICompletionHandler?) {
-        self.executeRequest(.get, APIPath.config, nil, nil) { (data, error) in
-            LOG(data)
-        }
+        //Prepare parameters, path, headers..
+        let params = ["lang":"en"]
+        self.executeRequest(.get, APIPath.config, params, nil, completion)
     }
 }

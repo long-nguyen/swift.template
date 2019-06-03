@@ -9,9 +9,11 @@
 import Foundation
 import UIKit
 
-class PopupUtils {
+class Alerts {
     static func showNetworkError() {
-        let alertController = UIAlertController(title: LSTR("err_network_title"), message: LSTR("err_network_msg"), preferredStyle: .alert)
+        let alertController = UIAlertController(title: "err_network_title".localized, message: "err_network_msg".localized, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: nil))
+
         if let topVC = UIApplication.topViewController() {
             topVC.present(alertController, animated: true, completion: nil)
         }
@@ -23,6 +25,7 @@ class PopupUtils {
     
     static func showMessage(title:String?, message: String?) {
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: nil))
         if let topVC = UIApplication.topViewController() {
             topVC.present(alertController, animated: true, completion: nil)
         }

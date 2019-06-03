@@ -26,7 +26,7 @@ class DatabaseMng {
         }
     }
     
-    func insertItems( items:[SampleModel]) -> Bool? {
+    func insertItems(items:[SampleModel]) -> Bool? {
         do {
             try dbQueue.inTransaction { db in
                 for data in items {

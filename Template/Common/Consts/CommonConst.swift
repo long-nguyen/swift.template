@@ -8,9 +8,12 @@
 
 import Foundation
 
-struct Const {
+struct CommonConst {
+    //Common
     static let APP_URL = "http://google.com"
+
 }
+
 
 
 

@@ -8,7 +8,8 @@
 
 import Foundation
 
-let KEY_START_USING_DAY = "KEY_START_USING_DAY"
+fileprivate let KEY_SAMPLE = "KEY_SAMPLE"
+fileprivate let KEY_TOKEN = "KEY_ACCESS_TOKEN"
 
 class PreferenceMng {
     static let instance = PreferenceMng()
@@ -16,12 +17,31 @@ class PreferenceMng {
         //Do nothing
     }
     
-    var startUsingDay: Int {
+    func reset() {
+        sampleVal = 0
+        accessToken = nil
+    }
+    
+    var sampleVal: Int {
         get {
-            return UserDefaults.standard.integer(forKey: KEY_START_USING_DAY)
+            return UserDefaults.standard.integer(forKey: KEY_SAMPLE)
         }
-        set(newVal) {
-            UserDefaults.standard.set(newVal, forKey: KEY_START_USING_DAY)
+        set {
+            UserDefaults.standard.set(newValue, forKey: KEY_SAMPLE)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    var accessToken: String? {
+        get {
+            if let token = UserDefaults.standard.string(forKey: KEY_TOKEN) {
+                return token
+            }
+            return nil
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: KEY_TOKEN)
+            UserDefaults.standard.synchronize()
         }
     }
 }
