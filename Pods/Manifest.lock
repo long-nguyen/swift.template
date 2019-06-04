@@ -3,6 +3,7 @@ PODS:
   - GRDB.swift (4.0.1):
     - GRDB.swift/standard (= 4.0.1)
   - GRDB.swift/standard (4.0.1)
+  - JGProgressHUD (2.0.3)
   - SDWebImage (5.0.3):
     - SDWebImage/Core (= 5.0.3)
   - SDWebImage/Core (5.0.3)
@@ -12,6 +13,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - GRDB.swift
+  - JGProgressHUD
   - SDWebImage
   - SwiftLint
   - SwiftyJSON
@@ -20,6 +22,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - GRDB.swift
+    - JGProgressHUD
     - SDWebImage
     - SwiftLint
     - SwiftyJSON
@@ -27,10 +30,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   GRDB.swift: 106a830decf1d92a3fc63c6d6a2f6586f6187297
+  JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   SDWebImage: d4f87d7d36c8a4d9f9459dc282e0caa057fdf935
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 6a6ea2d7684e1bf9571ee08151cceb10795be7f0
+PODFILE CHECKSUM: 1269eaefb7102d1f4e38c4c326d6cc2b96424c97
 
 COCOAPODS: 1.5.3

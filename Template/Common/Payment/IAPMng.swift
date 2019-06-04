@@ -13,7 +13,7 @@ let STORE_LOADED_EVENT = "co.au.WeatherAssistantWidget.storeLoadedEvent";
 let PURCHASE_CANCELLED_EVENT = "cancelled"
 
 struct ProductIds {
-    static let PRO_VERSION = "co.au.sample.proversion"
+    static let PRO_VERSION = "co.au.WeatherAssitantWidget.buy.no_ad"
     static let PURCHASE1 = "co.au.sample.purchase1"
 }
 
@@ -65,20 +65,21 @@ class IAPMng: NSObject {
     
     //MARK: Process observer result ------------------------------------------
     fileprivate func failedTransaction(_ transaction: SKPaymentTransaction) {
+        SKPaymentQueue.default().finishTransaction(transaction)
         if (transaction.error as? SKError)?.code == .paymentCancelled {
-            self._purchaseCompletion?(false, nil, "err_payment_cancelled".localized)
+            self._purchaseCompletion?(false, nil, PURCHASE_CANCELLED_EVENT)
         } else {
             self._purchaseCompletion?(false, nil, transaction.error?.localizedDescription)
         }
-        SKPaymentQueue.default().finishTransaction(transaction)
     }
     
     fileprivate func successTransaction(_ transaction: SKPaymentTransaction) {
         self.validateReceipt() { result, data, errMessage in
             if result {
                 //Do some action, like getting purchase date, time, expire date..
-                //transaction.payment.productIdentifier
+                self.afterPaymentSuccess(transaction)
                 self._purchaseCompletion?(true, data, errMessage)
+                //TODO: Here if our purchase is having network error then transaction can not be finished, then we need to send some notification becasue purchaseCompletion delegate is not available
                 SKPaymentQueue.default().finishTransaction(transaction)
             } else {
                 self._purchaseCompletion?(false, nil, "error_validate_purchase".localized)
@@ -87,7 +88,10 @@ class IAPMng: NSObject {
     }
     
     fileprivate func restoredTransaction(_ transaction: SKPaymentTransaction) {
-        
+        //TODO: Here if our purchase is having network error then transaction can not be finished, then we need to send some notification becasue purchaseCompletion delegate is not available
+        self.afterPaymentSuccess(transaction)
+        self._purchaseCompletion?(true, nil, nil)
+        SKPaymentQueue.default().finishTransaction(transaction)
     }
     
     fileprivate func validateReceipt(completion: @escaping (Bool, Any?, String?) -> Void) {
@@ -113,19 +117,22 @@ class IAPMng: NSObject {
             storeRequest.httpBody = requestData
             let session = URLSession(configuration: URLSessionConfiguration.default)
             let task = session.dataTask(with: storeRequest, completionHandler: { data, response, error in
-                if let err = error {
-                    completion(false, nil, err.localizedDescription)
-                } else {
-                    do {
-                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
-                        let status = jsonResponse["status"] as! Int
-                        if (status == 0) {
-                            completion(true, nil, nil)
-                        } else {
-                            completion(false, nil, nil)
+                DispatchQueue.main.async {
+                    if let err = error {
+                        completion(false, nil, err.localizedDescription)
+                    } else {
+                        do {
+                            let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
+                            let status = jsonResponse["status"] as! Int
+                            if (status == 0) {
+                                completion(true, nil, nil)
+                            } else {
+                                completion(false, nil, nil)
+                            }
+                            
+                        } catch let parseError {
+                            completion(false, nil, parseError.localizedDescription)
                         }
-                    } catch let parseError {
-                        completion(false, nil, parseError.localizedDescription)
                     }
                 }
             })
@@ -136,6 +143,9 @@ class IAPMng: NSObject {
         }
     }
     
+    func afterPaymentSuccess(_ transaction: SKPaymentTransaction) {
+        //TODO: Add point, life..
+    }
 }
 
 extension IAPMng: SKProductsRequestDelegate {
@@ -145,7 +155,7 @@ extension IAPMng: SKProductsRequestDelegate {
         _requestProductCompletion = nil
         _products.removeAll()
         response.products.forEach { product in
-            LOG("Found product: \(product)")
+            LOG("Found product: \(product.productIdentifier)")
             _products[product.productIdentifier] = product
         }
         _requestProductCompletion?(true, _products)
@@ -175,27 +185,6 @@ extension IAPMng: SKPaymentTransactionObserver {
                 break
             }
         }
-    }
-    
-    /// Logs all transactions that have been removed from the payment queue.
-    func paymentQueue(_ queue: SKPaymentQueue, removedTransactions transactions: [SKPaymentTransaction]) {
-        for transaction in transactions {
-            LOG("\(transaction.payment.productIdentifier) Removed")
-        }
-    }
-    
-    /// Called when an error occur while restoring purchases. Notify the user about the error.
-    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
-        if let error = error as? SKError, error.code != .paymentCancelled {
-            //TODO
-            LOG("Error while restoreing, send message")
-        }
-    }
-    
-    /// Called when all restorable transactions have been processed by the payment queue.
-    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        //TODO: Restored
-        LOG("Restore Processed")
     }
 }
 

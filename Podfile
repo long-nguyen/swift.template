@@ -9,4 +9,6 @@ target 'Template' do
   pod 'SDWebImage'
   pod 'GRDB.swift'
   pod 'SwiftyJSON'
+  pod 'JGProgressHUD'
+
 end

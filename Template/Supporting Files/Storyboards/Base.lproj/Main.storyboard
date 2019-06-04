@@ -25,10 +25,37 @@
                                     <segue destination="kVp-xM-mIH" kind="show" identifier="tableSegue" id="6lG-u4-yfO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6o8-bz-ziv">
+                                <rect key="frame" x="165" y="526" width="84" height="30"/>
+                                <state key="normal" title="Test call API"/>
+                                <connections>
+                                    <action selector="onCallAPI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5hr-G8-UDj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVk-ed-8uH">
+                                <rect key="frame" x="158.5" y="599" width="97" height="30"/>
+                                <state key="normal" title="Test purchase"/>
+                                <connections>
+                                    <action selector="onPurchaseClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="66U-nm-hYi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kso-WS-ILd">
+                                <rect key="frame" x="165" y="662" width="97" height="30"/>
+                                <state key="normal" title="Restore"/>
+                                <connections>
+                                    <action selector="onRestorePurchaseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6aY-x4-axZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="BZ4-Zw-Vqq" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="3Bi-ID-a2C"/>
+                            <constraint firstItem="Kso-WS-ILd" firstAttribute="top" secondItem="NVk-ed-8uH" secondAttribute="bottom" constant="33" id="4xZ-wk-UVa"/>
+                            <constraint firstItem="NVk-ed-8uH" firstAttribute="top" secondItem="6o8-bz-ziv" secondAttribute="bottom" constant="43" id="8cj-Xs-bXK"/>
+                            <constraint firstItem="Kso-WS-ILd" firstAttribute="centerX" secondItem="NVk-ed-8uH" secondAttribute="centerX" id="Aa7-oO-Dxn"/>
+                            <constraint firstItem="6o8-bz-ziv" firstAttribute="top" secondItem="BZ4-Zw-Vqq" secondAttribute="bottom" constant="36" id="NLo-kN-7pe"/>
+                            <constraint firstItem="6o8-bz-ziv" firstAttribute="centerX" secondItem="BZ4-Zw-Vqq" secondAttribute="centerX" id="O1p-WI-FBB"/>
+                            <constraint firstItem="NVk-ed-8uH" firstAttribute="centerX" secondItem="BZ4-Zw-Vqq" secondAttribute="centerX" id="a8o-Eb-n17"/>
                             <constraint firstItem="BZ4-Zw-Vqq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="haD-0f-Bp2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

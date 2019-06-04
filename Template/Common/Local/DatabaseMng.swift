@@ -26,6 +26,18 @@ class DatabaseMng {
         }
     }
     
+    func clearAll() -> Bool? {
+        do {
+            try dbQueue.write { db in
+                try db.execute(sql: "truncate table test")
+            }
+            return true
+        } catch let exception {
+            LOG(exception)
+            return false
+        }
+    }
+    
     func insertItems(items:[SampleModel]) -> Bool? {
         do {
             try dbQueue.inTransaction { db in
