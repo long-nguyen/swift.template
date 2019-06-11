@@ -17,6 +17,7 @@ class SampleTableViewController: AbstractTableViewController {
         super.viewDidLoad()
         items = DatabaseMng.instance.getAllItems()
         self.tableView.reloadData()
+        LOG("Test only")
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
